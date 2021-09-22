@@ -56,7 +56,7 @@ class FlutterBeacon {
   Stream<AuthorizationStatus>? _onAuthorizationStatus;
 
   /// Initialize scanning API.
-  Future<bool> get initializeScanning async {
+  Future<void> get initializeScanning async {
     final result = await _methodChannel.invokeMethod('initialize');
 
     if (result is bool) {
