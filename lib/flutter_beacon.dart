@@ -57,15 +57,7 @@ class FlutterBeacon {
 
   /// Initialize scanning API.
   Future<void> get initializeScanning async {
-    final result = await _methodChannel.invokeMethod('initialize');
-
-    if (result is bool) {
-      return result;
-    } else if (result is int) {
-      return result == 1;
-    }
-
-    return result;
+    return await _methodChannel.invokeMethod('initialize');
   }
 
   /// Initialize scanning API and check required permissions.
